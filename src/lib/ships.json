@@ -1,0 +1,62 @@
+{
+  "merchant": {
+    "heavy": [
+      {
+        "name": "",
+        "displacement": "",
+        "length": "",
+        "draught": "",
+        "beam": "",
+        "speed": "",
+        "mastHeight": "",
+        "islands":[],
+        "enginePlacement":"",
+        
+      }
+    ],
+    "light": [
+      {
+        "name": "",
+        "displacement": "",
+        "length": "",
+        "draught": "",
+        "beam": "",
+        "speed": "",
+        "mastHeight": ""
+      }
+    ],
+    "passenger": [
+      {
+        "name": "",
+        "displacement": "",
+        "length": "",
+        "draught": "",
+        "beam": "",
+        "speed": "",
+        "mastHeight": ""
+      }
+    ],
+    "requisitions": [
+      {
+        "name": "",
+        "displacement": "",
+        "length": "",
+        "draught": "",
+        "beam": "",
+        "speed": "",
+        "mastHeight": ""
+      }
+    ]
+  },
+  "warship": [
+    {
+      "name": "",
+      "displacement": "",
+      "length": "",
+      "draught": "",
+      "beam": "",
+      "speed": "",
+      "mastHeight": ""
+    }
+  ]
+}
