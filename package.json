@@ -2,7 +2,10 @@
   "scripts": {
     "start": "next",
     "build": "next build",
-    "next-start": "next start"
+    "next-start": "next start",
+    "homepage": "http://thurmand.github.io/wolfPack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
@@ -19,5 +22,8 @@
     "react-fela": "^10.2.2",
     "react-jss": "^8.6.1",
     "url-loader": "^1.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
