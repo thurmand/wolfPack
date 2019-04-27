@@ -18,11 +18,11 @@ class ShipDetails extends React.Component {
     let { mastHeight, length } = this.props.shipDetails;
     return (
       <Container>
-        <Typography variant="h6">Ship Details</Typography>
+        <Typography variant="h6">Features</Typography>
         <PaddedTextField
           id="mast-height"
           label="Mast Height"
-          margin="normal"
+          type="number"
           value={mastHeight}
           onChange={this.getMastHeight("mastHeight")}
           autoComplete="off"
@@ -30,9 +30,15 @@ class ShipDetails extends React.Component {
         <PaddedTextField
           id="length"
           label="Length"
-          margin="normal"
+          type="number"
           value={length}
-          onChange={this.getMastHeight("length")}
+          autoComplete="off"
+        />
+        <PaddedTextField
+          id="weight"
+          label="Weight"
+          type="number"
+          value={length}
           autoComplete="off"
         />
       </Container>

@@ -46,6 +46,7 @@ class RangeCalculator extends React.Component {
           id="centiradians"
           label="Centiradians"
           margin="normal"
+          type="number"
           value={centiradians}
           onChange={this.getCentiradians}
           autoComplete="off"
