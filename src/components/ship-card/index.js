@@ -9,15 +9,16 @@ import IconButton from "@material-ui/core/IconButton";
 import Delete from "@material-ui/icons/Delete";
 import DirectionsBoat from "@material-ui/icons/DirectionsBoat";
 import { createComponentWithProxy } from "react-fela";
-import { TextField } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import FindShip from "../find-ship-dialog";
 
-function CardHeaderActions(props) {
+function CardHeaderActions({ removeShip, showFindShipDialog }) {
   return (
     <>
-      {/* <IconButton>
+      <IconButton onClick={showFindShipDialog}>
         <DirectionsBoat />
-      </IconButton> */}
-      <IconButton onClick={props.removeShip}>
+      </IconButton>
+      <IconButton onClick={removeShip}>
         <Delete />
       </IconButton>
     </>
@@ -25,12 +26,18 @@ function CardHeaderActions(props) {
 }
 
 class ShipCard extends React.Component {
+  state = { isFindShipDialogOpen: false };
+
   importAll = r => {
     let images = {};
     r.keys().map((item, index) => {
       images[item.replace("./", "")] = r(item);
     });
     return images;
+  };
+
+  showFindShipDialog = () => {
+    this.setState({ isFindShipDialogOpen: !this.state.isFindShipDialogOpen });
   };
 
   render() {
@@ -40,19 +47,28 @@ class ShipCard extends React.Component {
     let image = "Heavy_Freighter_Type_1-2_1.jpg";
     // console.log(images);
     return (
-      <PaddedCard>
-        <CardHeader
-          title={<TextField label="Ship Name" autoComplete="off" />}
-          action={CardHeaderActions(this.props)}
+      <>
+        <FindShip
+          open={this.state.isFindShipDialogOpen}
+          onClose={this.showFindShipDialog}
         />
-        {/* <CardMediaHeight image={require(`../../images/${[image]}`)} /> */}
-        <CardContent>{this.props.children}</CardContent>
-        <CardActions>
-          {/* <IconButton>
+        <PaddedCard>
+          <CardHeader
+            title={<TextField label="Ship Name" autoComplete="off" />}
+            action={CardHeaderActions({
+              removeShip: this.props.removeShip,
+              showFindShipDialog: this.showFindShipDialog
+            })}
+          />
+          {/* <CardMediaHeight image={require(`../../images/${[image]}`)} /> */}
+          <CardContent>{this.props.children}</CardContent>
+          <CardActions>
+            {/* <IconButton>
             <DirectionsBoat />
           </IconButton> */}
-        </CardActions>
-      </PaddedCard>
+          </CardActions>
+        </PaddedCard>
+      </>
     );
   }
 }
