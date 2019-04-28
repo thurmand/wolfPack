@@ -54894,7 +54894,7 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getCentiradians", function (event) {
       var value = event.target.value;
 
-      if (!isNaN(value) && value >= 0 && value <= 50) {
+      if (value >= 0 && value <= 50) {
         _this.props.getCentiradians(value);
 
         _this.calculateHectoMeters(_this.props);
@@ -54928,20 +54928,19 @@ function (_React$Component) {
     value: function render() {
       var _this$props$rangeDeta = this.props.rangeDetails,
           isZoomed = _this$props$rangeDeta.isZoomed,
-          mastHeight = _this$props$rangeDeta.mastHeight,
           centiradians = _this$props$rangeDeta.centiradians,
           hectoMeters = _this$props$rangeDeta.hectoMeters;
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 38
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default.a, {
         variant: "subtitle1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 39
         },
         __self: this
       }, "Range"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
@@ -54954,7 +54953,7 @@ function (_React$Component) {
         autoComplete: "off",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 40
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -54963,21 +54962,21 @@ function (_React$Component) {
           checked: isZoomed,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 51
           },
           __self: this
         }),
         label: "Zoomed In",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 49
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default.a, {
         variant: "subtitle1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 55
         },
         __self: this
       }, "Output"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
@@ -54989,7 +54988,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 56
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
@@ -55001,7 +55000,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 64
         },
         __self: this
       }));
@@ -55253,14 +55252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/Typography/index.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-fela */ "./node_modules/react-fela/es/index.js");
-/* harmony import */ var _material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Switch */ "./node_modules/@material-ui/core/Switch/index.js");
-/* harmony import */ var _material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/FormControlLabel/index.js");
-/* harmony import */ var _material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/TextField/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/TextField/index.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -55269,9 +55262,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "E:\\Projects\\wolfPackCalc\\src\\components\\ship-details\\index.js";
-
-
-
 
 
 
@@ -55295,13 +55285,11 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ShipDetails)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getMastHeight", function (name) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "setPropValue", function (name) {
       return function (event) {
         var value = event.target.value;
 
-        if (!isNaN(value)) {
-          _this.props.setShipDetail(name, value);
-        }
+        _this.props.setShipDetail(name, value);
       };
     });
 
@@ -55313,18 +55301,19 @@ function (_React$Component) {
     value: function render() {
       var _this$props$shipDetai = this.props.shipDetails,
           mastHeight = _this$props$shipDetai.mastHeight,
-          length = _this$props$shipDetai.length;
+          length = _this$props$shipDetai.length,
+          weight = _this$props$shipDetai.weight;
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 15
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default.a, {
         variant: "h6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 16
         },
         __self: this
       }, "Features"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
@@ -55332,11 +55321,11 @@ function (_React$Component) {
         label: "Mast Height",
         type: "number",
         value: mastHeight,
-        onChange: this.getMastHeight("mastHeight"),
+        onChange: this.setPropValue("mastHeight"),
         autoComplete: "off",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 17
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
@@ -55344,21 +55333,23 @@ function (_React$Component) {
         label: "Length",
         type: "number",
         value: length,
+        onChange: this.setPropValue("length"),
         autoComplete: "off",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedTextField, {
         id: "weight",
         label: "Weight",
         type: "number",
-        value: length,
+        value: weight,
+        onChange: this.setPropValue("weight"),
         autoComplete: "off",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 33
         },
         __self: this
       }));
@@ -55372,7 +55363,7 @@ var PaddedTextField = Object(react_fela__WEBPACK_IMPORTED_MODULE_9__["createComp
   return {
     margin: "4px"
   };
-}, _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13___default.a);
+}, _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10___default.a);
 var Container = Object(react_fela__WEBPACK_IMPORTED_MODULE_9__["createComponentWithProxy"])(function () {
   return {
     height: "100%"
@@ -55443,7 +55434,8 @@ function (_React$Component) {
       ships: [{
         details: {
           mastHeight: "",
-          length: ""
+          length: "",
+          weight: ""
         },
         range: {
           isZoomed: false,
@@ -55458,7 +55450,8 @@ function (_React$Component) {
       return {
         details: {
           mastHeight: "",
-          length: ""
+          length: "",
+          weight: ""
         },
         range: {
           isZoomed: false,
@@ -55504,6 +55497,9 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      this.state.ships.map(function (ship, i) {
+        console.log(ship.details.mastHeight);
+      });
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, this.state.ships.map(function (ship, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_ship_card__WEBPACK_IMPORTED_MODULE_10__["default"], {
           key: i,
@@ -55522,7 +55518,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64
+            lineNumber: 69
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_ship_details__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -55532,13 +55528,13 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 80
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(PaddedDivider, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 86
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_range_calculator__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -55563,14 +55559,14 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 87
           },
           __self: this
         }));
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(FullWidthPaper, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(FullWidthButtonBase, {
@@ -55578,14 +55574,14 @@ function (_React$Component) {
         onClick: this.addShip,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 108
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__["Typography"], {
         variant: "button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 109
         },
         __self: this
       }, "Add Ship"))));
