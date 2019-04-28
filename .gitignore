@@ -12,9 +12,6 @@
 # production
 /build
 
-#git-hub-pages
-out
-
 # misc
 .DS_Store
 .env.local
