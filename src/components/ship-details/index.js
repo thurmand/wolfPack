@@ -1,21 +1,16 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { createComponentWithProxy } from "react-fela";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 class ShipDetails extends React.Component {
-  getMastHeight = name => event => {
+  setPropValue = name => event => {
     let value = event.target.value;
-    if (!isNaN(value)) {
-      this.props.setShipDetail(name, value);
-    }
+    this.props.setShipDetail(name, value);
   };
 
   render() {
-    let { mastHeight, length } = this.props.shipDetails;
+    let { mastHeight, length, weight } = this.props.shipDetails;
     return (
       <Container>
         <Typography variant="h6">Features</Typography>
@@ -24,7 +19,7 @@ class ShipDetails extends React.Component {
           label="Mast Height"
           type="number"
           value={mastHeight}
-          onChange={this.getMastHeight("mastHeight")}
+          onChange={this.setPropValue("mastHeight")}
           autoComplete="off"
         />
         <PaddedTextField
@@ -32,13 +27,15 @@ class ShipDetails extends React.Component {
           label="Length"
           type="number"
           value={length}
+          onChange={this.setPropValue("length")}
           autoComplete="off"
         />
         <PaddedTextField
           id="weight"
           label="Weight"
           type="number"
-          value={length}
+          value={weight}
+          onChange={this.setPropValue("weight")}
           autoComplete="off"
         />
       </Container>

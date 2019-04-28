@@ -12,7 +12,8 @@ class ShipList extends React.Component {
       {
         details: {
           mastHeight: "",
-          length: ""
+          length: "",
+          weight: ""
         },
         range: {
           isZoomed: false,
@@ -28,7 +29,8 @@ class ShipList extends React.Component {
     return {
       details: {
         mastHeight: "",
-        length: ""
+        length: "",
+        weight: ""
       },
       range: {
         isZoomed: false,

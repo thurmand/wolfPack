@@ -9,7 +9,7 @@ import TextField from "@material-ui/core/TextField";
 class RangeCalculator extends React.Component {
   getCentiradians = event => {
     let value = event.target.value;
-    if (!isNaN(value) && (value >= 0 && value <= 50)) {
+    if (value >= 0 && value <= 50) {
       this.props.getCentiradians(value);
       this.calculateHectoMeters(this.props);
     }
@@ -33,12 +33,7 @@ class RangeCalculator extends React.Component {
   };
 
   render() {
-    let {
-      isZoomed,
-      mastHeight,
-      centiradians,
-      hectoMeters
-    } = this.props.rangeDetails;
+    let { isZoomed, centiradians, hectoMeters } = this.props.rangeDetails;
     return (
       <Container>
         <Typography variant="subtitle1">Range</Typography>
