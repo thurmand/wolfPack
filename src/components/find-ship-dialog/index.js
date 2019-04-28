@@ -6,76 +6,90 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import {
-  FormControl,
-  Radio,
-  RadioGroup,
-  FormControlLabel
-} from "@material-ui/core";
+import { Button, ButtonBase, TextField, IconButton } from "@material-ui/core";
+import KeyboardBackspace from "@material-ui/icons/KeyboardBackspace";
 
 class FindShip extends React.Component {
   // TODO put in library and derive object from it
   state = {
-    profile: [null],
+    profile: "",
     maxProfileCount: 5,
     features: ["M", "F", "K"]
   };
 
-  handleChange = (event, i) => {
-    let profile = this.state.profile;
-    profile[i] = event.target.value;
-    if (profile[profile.length - 1] != null && profile.length < 5) {
-      profile.push(null);
+  filterInput = event => {
+    let value = event.target.value.toUpperCase();
+    let isBadChar = [...value].some(
+      char => char !== "M" && char !== "F" && char !== "K"
+    );
+    if (!isBadChar) {
+      this.setProfile(value, this.state);
     }
+  };
 
-    this.setState({ profile: profile }, () => {
-      console.log(this.state.profile);
-    });
+  addToProfile = (value, state) => {
+    let profile = state.profile;
+    profile += value;
+    this.setState({ profile: profile });
+  };
+
+  setProfile = (value, state) => {
+    if (state.profile.length < state.maxProfileCount)
+      this.setState({ profile: value });
+  };
+
+  popProfile = () => {
+    let profile = this.state.profile;
+    this.setState({ profile: profile.slice(0, -1) });
   };
 
   render() {
     return (
       <Dialog open={this.props.open} onClose={this.props.onClose}>
-        <DialogTitle>Quick Search</DialogTitle>
+        <DialogTitle>Find Ship</DialogTitle>
         <DialogContent>
-          <HorizontalForm>
-            {this.state.profile.map((position, i) => (
-              <RadioGroup
-                value={this.state.value}
-                onChange={() => {
-                  this.handleChange(event, i);
-                }}
+          <TextField
+            value={this.state.profile}
+            onChange={this.filterInput}
+            autoFocus={true}
+          />
+          <br />
+          <ButtonContainer>
+            {this.state.features.map((feature, i) => (
+              <ButtonStyle
                 key={i}
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  this.addToProfile(feature, this.state);
+                }}
               >
-                {this.state.features.map((n, j) => (
-                  <FormControlLabel
-                    key={j}
-                    value={n}
-                    control={
-                      <Radio
-                        color="primary"
-                        checked={n === this.state.profile[i]}
-                      />
-                    }
-                    label={n}
-                  />
-                ))}
-              </RadioGroup>
+                {feature}
+              </ButtonStyle>
             ))}
-          </HorizontalForm>
+            <IconButton onClick={this.popProfile}>
+              <KeyboardBackspace />
+            </IconButton>
+          </ButtonContainer>
         </DialogContent>
       </Dialog>
     );
   }
 }
 
-const HorizontalForm = createComponentWithProxy(
+const ButtonStyle = createComponentWithProxy(
   () => ({
-    display: "flex",
-    flexWrap: "nowrap",
-    flexDirection: "row"
+    padding: "2px, 4px "
   }),
-  FormControl
+  Button
 );
+
+const ButtonContainer = createComponentWithProxy(() => ({
+  paddingTop: "8px",
+  display: "flex",
+  flexWrap: "nowrap",
+  flexDirection: "row",
+  justifyContent: "space-around"
+}));
 
 export default FindShip;
