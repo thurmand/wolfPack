@@ -7,6 +7,7 @@ import { ButtonBase, Paper, Typography, Divider } from "@material-ui/core";
 
 class ShipList extends React.Component {
   state = {
+    isFindShipDialogOpen: false,
     ships: [
       {
         details: {
@@ -66,6 +67,9 @@ class ShipList extends React.Component {
               let currentShips = this.state.ships;
               currentShips.splice(i, 1);
               this.setState({ ships: currentShips });
+            }}
+            showFindShipDialog={() => {
+              this.setState({ isFindShipDialogOpen: true });
             }}
           >
             <ShipDetails
