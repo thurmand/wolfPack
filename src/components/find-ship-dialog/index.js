@@ -30,12 +30,15 @@ class FindShip extends React.Component {
   addToProfile = (value, state) => {
     let profile = state.profile;
     profile += value;
-    this.setState({ profile: profile });
+    if (profile.length < state.maxProfileCount) {
+      this.setState({ profile: profile });
+    }
   };
 
   setProfile = (value, state) => {
-    if (state.profile.length < state.maxProfileCount)
+    if (state.profile.length < state.maxProfileCount) {
       this.setState({ profile: value });
+    }
   };
 
   popProfile = () => {
