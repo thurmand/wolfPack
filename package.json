@@ -10,7 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "fela-plugin-embedded": "^10.2.2",
     "fela-plugin-important": "^10.2.2",
     "fela-plugin-placeholder-prefixer": "^10.2.2",
